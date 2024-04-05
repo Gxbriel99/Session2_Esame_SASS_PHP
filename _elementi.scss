@@ -1,0 +1,43 @@
+// definsco le dimensioni dei miei container contenuti nel main
+@mixin setup_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 100%;
+}
+// definsco le dimensioni dei miei sub_container contenuti nel container padre
+@mixin sub_container {
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    width: 95%;
+    height: 70vh;
+    border: #8e8e8e solid 2px;
+}
+
+// definsco le dimensioni e la posizione dell'immagine di sfondo contenuta nel container
+%img_setup{
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+// definsco il posizionamento e le dimensioni delle img contenute in gallery_container
+@mixin galleria{
+    display: flex;
+    width:100%;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+}
+
+// definsco l'aspetto e le dimensioni del mio footer 
+@mixin footer {
+    display: flex;
+    height: 90px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    color: yellow;
+}
