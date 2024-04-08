@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Scrivo i dati nel file JSON
     file_put_contents($file_json, $json_dati);
 
-    echo "I dati sono stati salvati correttamente nel file JSON.";
+    "I dati sono stati salvati correttamente nel file JSON.";
     } else {
         // Se i dati non sono stati inviati tramite POST, mostra un messaggio di errore
         echo "Errore: I dati del form non sono stati inviati correttamente.";
@@ -36,23 +36,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.min.css">
-    <title>Form</title>
+    <link rel="stylesheet" href="portfolio_elements.min.css">
 </head>
 <body>
-    <form action="./form.php" method="post">
-        <input type="text" name="nome" placeholder="Nome">
-        <input type="text" name="cognome" placeholder="Cognome"> <br> <br>
-        <input type="email" name="email" placeholder="Email" checked="checked">
-        <input type="text" name="oggetto" placeholder="Oggetto"> <br> <br>
-        <textarea name="textarea" placeholder="Ponimi il tuo quesito..."></textarea> <br>
-        <input class="form_button" type="submit" name="submit" value="Invia" >
-        <input class="form_button" type="reset" name="reset" value="Reset">
-    </form>
+<?php require("header_2.php") ;?>
+<main>
+    <div id="container">
+    <?php echo "I dati sono stati salvati correttamente nel file JSON.";?>
+    </div>
+</main>
+<?php require("footer.php") ;?>
 </body>
 </html>

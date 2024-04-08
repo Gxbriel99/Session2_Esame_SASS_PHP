@@ -44,19 +44,19 @@
        <h1 id="top2"></h1>
        <div class="container4">
             <div class="sub_container">
-                <p>PORFOLIO</p>
+                <p>PORTFOLIO</p>
                 <p>QUANDO NON HO NULLA DA FARE MI PIACE CREARE QUALCUNA DI QUESTE ROBE</p>
                 <div class="gallery_container">
         <!-- dichiaro un altro container che userò per impostare le img al suo interno -->
                     <ul>
-                        <li> <a href="./portfolio1.php"><img class="gallery_element" src="./media/img/portfolio/portfolio_01.jpg" alt="img1"></img></a></li>
-                        <li> <a href="./portfolio2.php"><img class="gallery_element" src="./media/img/portfolio/portfolio_02.jpg" alt="img2"></img></a></li>
-                        <li> <a href="./portfolio3.php"><img class="gallery_element" src="./media/img/portfolio/portfolio_03.jpg" alt="img3"></img></a></li>
-                        <li> <a href="./portfolio4.php"><img class="gallery_element" src="./media/img/portfolio/portfolio_04.jpg" alt="img4"></img></a></li> <br>
-                        <li> <a href="./portfolio5.php"><img class="gallery_element" src="./media/img/portfolio/portfolio_05.jpg" alt="img5"></img></a></li>
-                        <li> <a href="./portfolio6.php"><img class="gallery_element" src="./media/img/portfolio/portfolio_06.jpg" alt="img6"></img></a></li>
-                        <li> <a href="./portfolio7.php"><img class="gallery_element" src="./media/img/portfolio/portfolio_07.jpg" alt="img7"></img></a></li>
-                        <li> <a href="./portfolio8.php"><img class="gallery_element" src="./media/img/portfolio/portfolio_08.jpg" alt="img8"></img></a></li>
+                        <li> <a href="portfolio.php?id=1"><img class="gallery_element" src="./media/img/portfolio/portfolio_01.jpg" alt="img1"></img></a></li>
+                        <li> <a href="portfolio.php?id=2"><img class="gallery_element" src="./media/img/portfolio/portfolio_02.jpg" alt="img2"></img></a></li>
+                        <li> <a href="portfolio.php?id=3"><img class="gallery_element" src="./media/img/portfolio/portfolio_03.jpg" alt="img3"></img></a></li>
+                        <li> <a href="portfolio.php?id=4"><img class="gallery_element" src="./media/img/portfolio/portfolio_04.jpg" alt="img4"></img></a></li> <br>
+                        <li> <a href="portfolio.php?id=5"><img class="gallery_element" src="./media/img/portfolio/portfolio_05.jpg" alt="img5"></img></a></li>
+                        <li> <a href="portfolio.php?id=6"><img class="gallery_element" src="./media/img/portfolio/portfolio_06.jpg" alt="img6"></img></a></li>
+                        <li> <a href="portfolio.php?id=7"><img class="gallery_element" src="./media/img/portfolio/portfolio_07.jpg" alt="img7"></img></a></li>
+                        <li> <a href="portfolio.php?id=8"><img class="gallery_element" src="./media/img/portfolio/portfolio_08.jpg" alt="img8"></img></a></li>
                         
                     </ul>
                 </div>
@@ -84,8 +84,16 @@
             <p>Contact Us</p>
             <h1 id="top4"></h1>
             <p class="p2">Possiamo prenderci del tempo per chattare insieme o per bere un caffè!</p>
-            <!-- richiamo il form creato nell'apposito file form.php -->
-            <?php require("form.php") ;?>
+    <!-- richiamo il form creato nell'apposito file form.php -->
+            <form action="./form.php" method="POST">
+                <input type="text" name="nome" placeholder="Nome">
+                <input type="text" name="cognome" placeholder="Cognome"> <br> <br>
+                <input type="email" name="email" placeholder="Email" checked="checked">
+                <input type="text" name="oggetto" placeholder="Oggetto"> <br> <br>
+                <textarea name="textarea" placeholder="Ponimi il tuo quesito..."></textarea> <br>
+                <input class="form_button" type="submit" name="submit" value="Invia" >
+                <input class="form_button" type="reset" name="reset" value="Reset">
+            </form>
         </div>
        </div>
     </main>
