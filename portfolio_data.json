@@ -2,57 +2,41 @@
     {
       "id": 1,
       "titolo": "FOTO N1",
-      "immagine": "./media/img/portfolio/portfolio_01.jpg",
-      "descrizione": "Creato con Photoshop ✔ disponibile in PNG,SVG & JPG ✔ Risoluzione in 3840×2160(4k) ✔ Disponibilità immediata ✔ "
+      "immagine": "./media/img/portfolio/portfolio_01.jpg"
     },
     {
       "id": 2,
       "titolo": "Lavoro 2",
-      "immagine": "./media/img/portfolio/portfolio_02.jpg",
-      "descrizione": "Creato con Photoshop ✔ disponibile in PNG,SVG & JPG ✔ Risoluzione in 3840×2160(4k) ✔ Disponibilità immediata ✔ "
-    
+      "immagine": "./media/img/portfolio/portfolio_02.jpg"
     },
     {
         "id": 3,
         "titolo": "Lavoro 3",
-        "immagine": "./media/img/portfolio/portfolio_03.jpg",
-        "descrizione": "Creato con Photoshop ✔ disponibile in PNG,SVG & JPG ✔ Risoluzione in 3840×2160(4k) ✔ Disponibilità immediata ✔ "
-      
+        "immagine": "./media/img/portfolio/portfolio_03.jpg"
     },
     {
         "id": 4,
         "titolo": "Lavoro 4",
-        "immagine": "./media/img/portfolio/portfolio_04.jpg",
-        "descrizione": "Creato con Photoshop ✔ disponibile in PNG,SVG & JPG ✔ Risoluzione in 3840×2160(4k) ✔ Disponibilità immediata ✔ "
-      
+        "immagine": "./media/img/portfolio/portfolio_04.jpg"
     },
     {
         "id": 5,
         "titolo": "Lavoro 5",
-        "immagine": "./media/img/portfolio/portfolio_05.jpg",
-        "descrizione": "Creato con Photoshop ✔ disponibile in PNG,SVG & JPG ✔ Risoluzione in 3840×2160(4k) ✔ Disponibilità immediata ✔ "
-      
+        "immagine": "./media/img/portfolio/portfolio_05.jpg"
     },
     {
         "id": 6,
         "titolo": "Lavoro 6",
-        "immagine": "./media/img/portfolio/portfolio_06.jpg",
-        "descrizione": "Creato con Photoshop ✔ disponibile in PNG,SVG & JPG ✔ Risoluzione in 3840×2160(4k) ✔ Disponibilità immediata ✔ "
-      
+        "immagine": "./media/img/portfolio/portfolio_06.jpg"
     },
     {
         "id": 7,
         "titolo": "Lavoro 7",
-        "immagine": "./media/img/portfolio/portfolio_07.jpg",
-        "descrizione": "Creato con Photoshop ✔ disponibile in PNG,SVG & JPG ✔ Risoluzione in 3840×2160(4k) ✔ Disponibilità immediata ✔ "
-      
+        "immagine": "./media/img/portfolio/portfolio_07.jpg"
     },
     {
         "id": 8,
         "titolo": "Lavoro 8",
-        "immagine": "./media/img/portfolio/portfolio_08.jpg",
-        "descrizione": "Creato con Photoshop ✔ disponibile in PNG,SVG & JPG ✔ Risoluzione in 3840×2160(4k) ✔ Disponibilità immediata ✔ "
-      
+        "immagine": "./media/img/portfolio/portfolio_08.jpg"
     }
-    
   ]

@@ -1,74 +1,9 @@
-// Importo i font che voglio implementare
 
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=PT+Mono&family=Roboto&display=swap');
 @import 'elementi' ;
 
-// definisco le dimensioni del mio foglio
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-// definisco le dimensioni del mio header
-header{
-    background-color:#ffffff;
-    border-bottom: solid 3px yellow;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: auto;
-    height: 50px;
-    // definisco le dimensioni del logo del header
-    img{
-        width: 100px;
-        margin-right: auto;
-        // implento una media querry per il logo
-        @media all and (max-width:430px)and (max-height:500px){
-            width: 60px;
-        }
-        @media all and (max-width:375px)and (max-height:500px){
-            width: 30px;
-        }
-    }
-
-// definisco il mio menù e gli applico la prop hover
-    nav{
-        align-items: center;
-        ul{
-            list-style: none;
-            li{
-                font-family: 'PT Mono', monospace;
-                padding: 10px 20px;
-                display: inline;
-                @media all and (max-width:430px)and (max-height:500px){
-                    font-size: 10px;
-                    padding: 5px;
-                }
-                @media all and (max-width:376px)and (max-height:500px){
-                    font-size: 8px;
-                    padding: 3px;
-                }
-                a{
-                    align-items: center;
-                    text-decoration: none;
-                    color: #6c6868;
-                    &:hover{
-                        color: white;
-                    }
-                }
-                &:hover{
-                    background-color: #8e8e8e;
-                    border-bottom: solid 3px #b5ad0b;
-                }
-            }
-        }
-    }
-}
-
 main{
-   @include setup_container ;
-   flex-direction: column;
+    @include setup_container ;
+    flex-direction: column;
    #sub_container{
     @include sub_container ;
     border-radius: 20px;
@@ -77,7 +12,7 @@ main{
         height: 60vh;
         width: 95%;
     }
-    @media all and (max-width:376px)and (max-height:500px){
+    @media all and (max-width:376px){
         height: 50vh;
         width: 90%;
     }
@@ -86,11 +21,12 @@ main{
         margin-left: 25px;
         font-family: 'PT Mono', monospace;
         font-size: larger;
-        @media all and (max-width:430px)and (max-height:500px){
+
+        @media all and (max-width:430px){
             font-size: 15px;
         }
-        @media all and (max-width:376px)and (max-height:500px){
-            font-size: 8px;
+        @media all and (max-width:376px){
+            font-size: 15px;
         }
         #span1{
             color:#ded30b;
@@ -100,34 +36,15 @@ main{
         }
     }
     .img{
-        margin-left: 2em;
+        padding-left: 10px;
         border-radius: 20px;
-        @media all and (max-width:430px)and (max-height:500px){
-            width: 200px;
+        @media all and (max-width:430px){
+            width: 150px;
             
         }
-        @media all and (max-width:376px)and (max-height:500px){
-            width: 150px;
+        @media all and (max-width:376px){
+            width: 90px;
         }
     }
-    }
-}
-
-footer{
-    @include footer ;
-    @media all and (max-width:430px)and (max-height:500px){
-        .logo_social{
-            width: 30px;
-            height: 30px;
-        }
-    }
-    @media all and (max-width:376px)and (max-height:500px){
-        .logo_social{
-            width: 15px;
-            height: 15px;
-        }
-        p{
-            font-size: 10px;
-        }
     }
 }
