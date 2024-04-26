@@ -116,232 +116,273 @@ main{
             font-size: 50px;
         }
     }
-    .container2{
-        @include setup_container ;
-        .text_container2{
-            @include sub_container ;
-            flex-direction: column;
-            overflow: hidden;
-            text-align: center;
-            .p1{
-                font-style:italic;
-                font-weight: bold;
-            }
-            .p2{
-                font-weight: bold;
-                color: #fff200;
-            }
-            
-            .sub_text_container{
-                display: flex;
-                align-items: center;
-                justify-content: space-around;
-                padding: 0 5px;
-
-                p{
-                    flex-wrap: wrap;
-                    font-size: 13px;
-                    padding: 0 6px;
-                    .span1{
-                        font-size: 20px;
-                        font-weight: bold;
-                        color: #fff306;
-                        @media all and (max-width:376px){
-                            font-size: 10px;
-                        }
-                    }
-                    .span2{
-                        color: #8e8e8e;
-                        text-align: center;
-                        font-size: 15px;
-                        @media all and (max-width:376px){
-                            font-size: 10px;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    .container3{
-        @include setup_container ;
-        background: linear-gradient(rgba(241,226,84, 0.8), rgba(241,226,84, 0.8)), url(./media/img/about_bg.jpg);
-        @extend %img_setup ;
+    // Container 2: Testo aggiuntivo
+.container2 {
+    // Includi il mixin 'setup_container' per i contenitori
+    @include setup_container;
+    // Container interno
+    .text_container2 {
+        // Includi il mixin 'sub_container' per il container interno
+        @include sub_container;
         flex-direction: column;
-        justify-content:end;
-        padding: 25px;
-        #sub_p{
-            text-align: center;
-            text-transform: uppercase;
-            font-size: 23px;
-            font-weight: bold;
+        overflow: hidden;
+        text-align: center;
+        // Stili per il testo
+        .p1 {
             font-style: italic;
-            margin-bottom: 80px;
+            font-weight: bold;
         }
-        #sub_p2{
-            color: #828080;
-            font-size: 15px;
-            margin-bottom: 40px;
-            text-align: center;
+        .p2 {
+            font-weight: bold;
+            color: #fff200;
         }
-    
-    }
-    .container4{
-        @include setup_container;
-        .sub_container{
-            @include sub_container ;
-            text-align: center;
-            flex-direction: column;
-            .gallery_container{
-                @include galleria ;
-                ul{
-                    list-style: none;
-                    li{
-                        display: inline;
-                        padding: 5px;
-                        .gallery_element{
-                            height: 6em;
-                            width: 7em;
-                            &:hover{
-                                height: 7em;
-                                width: 8em;
-                                transition: 0.5s;
-                            }
-                            @media all and (max-width:430px){
-                                height: 3em;
-                                width: 5em;
-                            }
-                            @media all and (max-width:376px){
-                                height: 3em;
-                                width: 3em;
-                            }
-                        }
-                    }
-                }
-            }
 
-        }
-    }
-    .container5{
-        @include setup_container ;
-        justify-content: space-around;
-        flex-direction: column;
-        @extend %img_setup ;
-        background: linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0, 0.5)), url(./media/img/clients_bg.jpg);
-        @media all and (max-width:430px){
-            background-position: center;
-        }
-        .p1{
-            color: white;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-        .p2{
-            text-align: center;
-            text-transform: uppercase;
-            font-weight: bold;
-            color: #fff306;
-        }
-        .icon_container{
+        // Container per il testo aggiuntivo
+        .sub_text_container {
             display: flex;
-            @include galleria;
-            padding: 40px ;
+            align-items: center;
+            justify-content: space-around;
+            padding: 0 5px;
 
-            .logo{
-                width: 10%;
-                height: auto;
-
-                &:hover{
-                    transform: rotate(360deg);
-                    transition: 2.5s;
-                }
-                @media all and (max-width:320px){
-                    width: 18%;
-                }
-
-            }
-        }
-    }
-    .container6{
-        @include setup_container ;
-        .sub_container{
-            @include sub_container ;
-            flex-direction: column;
-            text-align: center;
-
-            p{
-                text-transform: uppercase;
-                font-style: bold;
-                font-size: 20px;
-                @media all and (max-width:430px){
-                    font-size: 15px;
-                }
-            }
-            .p2{
-                color:#828080;
-                @media all and (max-width:430px){
-                    font-size: 15px;
-                }
-            }
-            form{
-                display: inline;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-                border: solid #8e8e8e 2px;
-                border-radius: 5px;
-                padding: 40px 10px;
-                @media all and (max-width:376px){
-                    padding: 10px 5px;
-                }
-                textarea{
-                    width: 100%;
-                    height: 80px;
-                }
-                .form_button{
-                    padding: 5px 50px;
-                    background-color: #fff200;
-                    border: solid 2px #fff200;
-                    color: #6c6868;
-                    margin-top: 10px;
-                    &:hover{
-                        background-color: #6c686800;
-                        cursor: pointer;
+            p {
+                flex-wrap: wrap;
+                font-size: 13px;
+                padding: 0 6px;
+                // Stili per parti specifiche del testo aggiuntivo
+                .span1 {
+                    font-size: 20px;
+                    font-weight: bold;
+                    color: #fff306;
+                    // Media query per regolare il font-size in base alla larghezza dello schermo
+                    @media all and (max-width: 376px) {
+                        font-size: 10px;
                     }
-                    &::after{
-                        padding: 5px 50px;
-                        background-color: #fff200;
-                        border: solid 2px #fff200;
-                    }
-                    @media all and (max-width:376px){
-                        padding: 2px 10px;
+                }
+                .span2 {
+                    color: #8e8e8e;
+                    text-align: center;
+                    font-size: 15px;
+                    // Media query per regolare il font-size in base alla larghezza dello schermo
+                    @media all and (max-width: 376px) {
+                        font-size: 10px;
                     }
                 }
             }
         }
     }
 }
-footer{
+
+// Container 3: Sezione About
+.container3 {
+    // Includi il mixin 'setup_container' per i contenitori
+    @include setup_container;
+    // Sfondo con gradiente e immagine
+    background: linear-gradient(rgba(241, 226, 84, 0.8), rgba(241, 226, 84, 0.8)), url(./media/img/about_bg.jpg);
+    // Estendi il placeholder 'img_setup' per i settaggi dell'immagine
+    @extend %img_setup;
+    flex-direction: column;
+    justify-content: end; // Allinea il contenuto alla fine del container
+    padding: 25px;
+
+    // Stili per i paragrafi
+    #sub_p {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 23px;
+        font-weight: bold;
+        font-style: italic;
+        margin-bottom: 80px;
+    }
+    #sub_p2 {
+        color: #828080;
+        font-size: 15px;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+}
+
+// Container 4: Galleria di immagini
+.container4 {
+    // Includi il mixin 'setup_container' per i contenitori
+    @include setup_container;
+    // Container interno
+    .sub_container {
+        // Includi il mixin 'sub_container' per il container interno
+        @include sub_container;
+        text-align: center;
+        flex-direction: column;
+
+        // Stili per la galleria
+        .gallery_container {
+            @include galleria;
+            ul {
+                list-style: none;
+                li {
+                    display: inline;
+                    padding: 5px;
+                    .gallery_element {
+                        height: 6em;
+                        width: 7em;
+                        &:hover {
+                            height: 7em;
+                            width: 8em;
+                            transition: 0.5s;
+                        }
+                        @media all and (max-width: 430px) {
+                            height: 3em;
+                            width: 5em;
+                        }
+                        @media all and (max-width: 376px) {
+                            height: 3em;
+                            width: 3em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Container 5: Sezione Clienti
+.container5 {
+    // Includi il mixin 'setup_container' per i contenitori
+    @include setup_container;
+    justify-content: space-around; // Spazio uniforme tra gli elementi
+    flex-direction: column;
+    @extend %img_setup; // Estendi il placeholder 'img_setup' per i settaggi dell'immagine
+    // Sfondo con gradiente e immagine
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./media/img/clients_bg.jpg);
+    @media all and (max-width: 430px) {
+        background-position: center;
+    }
+
+    // Stili per i paragrafi
+    .p1 {
+        color: white;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    .p2 {
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: #fff306;
+    }
+
+    // Container per le icone dei clienti
+    .icon_container {
+        display: flex;
+        @include galleria;
+        padding: 40px;
+
+        // Stili per i loghi
+        .logo {
+            width: 10%;
+            height: auto;
+            &:hover {
+                transform: rotate(360deg);
+                transition: 2.5s;
+            }
+            @media all and (max-width: 320px) {
+                width: 18%;
+            }
+        }
+    }
+}
+
+// Container 6: Contattaci
+.container6 {
+    // Includi il mixin 'setup_container' per i contenitori
+    @include setup_container;
+    // Container interno
+    .sub_container {
+        // Includi il mixin 'sub_container' per il container interno
+        @include sub_container;
+        flex-direction: column;
+        text-align: center;
+
+        // Stili per i paragrafi
+        p {
+            text-transform: uppercase;
+            font-size: 20px;
+            @media all and (max-width: 430px) {
+                font-size: 15px;
+            }
+        }
+        .p2 {
+            color: #828080;
+            @media all and (max-width: 430px) {
+                font-size: 15px;
+            }
+        }
+
+        // Stili per il form di contatto
+        form {
+            display: inline;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border: solid #8e8e8e 2px;
+            border-radius: 5px;
+            padding: 40px 10px;
+            @media all and (max-width: 376px) {
+                padding: 10px 5px;
+            }
+
+            textarea {
+                width: 100%;
+                height: 80px;
+            }
+            .form_button {
+                padding: 5px 50px;
+                background-color: #fff200;
+                border: solid 2px #fff200;
+                color: #6c6868;
+                margin-top: 10px;
+                &:hover {
+                    background-color: #6c686800;
+                    cursor: pointer;
+                }
+                &::after {
+                    padding: 5px 50px;
+                    background-color: #fff200;
+                    border: solid 2px #fff200;
+                }
+                @media all and (max-width: 376px) {
+                    padding: 2px 10px;
+                }
+            }
+        }
+    }
+}
+}
+
+// Footer
+footer {
+    // Includi il mixin 'footer' per il footer
     @include footer;
-    @media all and (max-width:430px){
-        .logo_social{
+    @media all and (max-width: 430px) {
+        // Ridimensiona i loghi social nel footer per schermi più piccoli
+        .logo_social {
             width: 30px;
             height: 30px;
         }
     }
-    @media all and (max-width:376px){
-        .logo_social{
+    @media all and (max-width: 376px) {
+        .logo_social {
             width: 15px;
             height: 15px;
         }
     }
-    p{
+    // Stili per i paragrafi nel footer
+    p {
         font-size: 20px;
-        @media all and (max-width:426px){
+        // Media query per regolare il font-size in base alla larghezza dello schermo
+        @media all and (max-width: 426px) {
             font-size: 15px;
         }
-        @media all and (max-width:376px){
+        @media all and (max-width: 376px) {
             font-size: 10px;
         }
-    }   
+    }
 }
-

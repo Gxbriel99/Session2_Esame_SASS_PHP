@@ -1,33 +1,46 @@
 <?php
+// Variabili per gestire errori e messaggi di successo
 $errorGeneric = '';
 $succesfull = '';
+
+// Verifica se la richiesta è di tipo POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Recupera i dati dal form
     $nome = $_POST["nome"];
     $cognome = $_POST["cognome"];
     $email = $_POST["email"];
     $oggetto = $_POST["oggetto"];
     $textarea = $_POST["textarea"];
 
+    // Valuta le condizioni dei dati inseriti
     switch(true){
+        // Se uno dei campi è vuoto, genera un errore generico
         case($nome =='' || $cognome=='' || $email=='' || $oggetto=='' || $textarea==''):
             $errorGeneric = "   Attenzione I campi non possono essere lasciati vuoti";
             break;
+        // Se il campo nome è vuoto, genera un errore specifico per il campo nome
         case(empty($nome)):
             $errorGeneric = "Attenzione! Il campo nome non può essere lasciato vuoto";
             break;
+        // Se il campo cognome è vuoto, genera un errore specifico per il campo cognome
         case(empty($cognome)):
             $errorGeneric = "Attenzione! Il campo cognome non può essere lasciato vuoto";
             break;
+        // Se il campo oggetto è vuoto, genera un errore specifico per il campo oggetto
         case(empty($oggetto)):
             $errorGeneric = "Attenzione! Il campo oggetto non può essere lasciato vuoto";
             break;
+        // Se il campo email è vuoto, genera un errore specifico per il campo email
         case(empty($email)):
             $errorGeneric = "Attenzione! Il campo email non può essere lasciato vuoto";
             break;
+        // Se il campo textarea è vuoto, genera un errore specifico per il campo textarea
         case(empty($textarea)):
             $errorGeneric = "Attenzione! Il campo textarea non può essere lasciato vuoto";
             break;
-            default:
+        // Se tutti i campi sono stati compilati, memorizza i dati e mostra un messaggio di successo
+        default:
+            // Crea un array associativo con i dati del form
             $dati = [
                 "nome" => $nome,
                 "cognome" => $cognome,
@@ -36,13 +49,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 "textarea" => $textarea
             ];
     
+            // Converti l'array in formato JSON
             $json_dati = json_encode($dati);
+            // Nome del file JSON in cui verranno memorizzati i dati
             $file_json = "dati_form.json";
+            // Scrivi i dati nel file JSON
             file_put_contents($file_json, $json_dati);
+            // Mostra un messaggio di successo
             $succesfull = "I dati sono stati inviati correttamente";
             break;
     }
 }
+// Fine del codice PHP
 ?>
 <!DOCTYPE html>
 <html lang="it">
