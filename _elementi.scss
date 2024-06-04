@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 85vh;
+    height: 90vh;
     width: 100%;
 }
 // definsco le dimensioni dei miei sub_container contenuti nel container padre
@@ -12,7 +12,24 @@
     align-items: center;
     justify-content:space-around;
     width: 100%;
-    height: 70vh;
+    height: 85vh;
+    border: #8e8e8e solid 2.5px;
+}
+@mixin sub_container_2 {
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    width: 100%;
+    height: 85%;
+    border: #8e8e8e solid 2.5px;
+}
+@mixin sub_container_3 {
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    width: 100%;
+    height: 100%;
+    padding: 5px 8px;
     border: #8e8e8e solid 2.5px;
 }
 

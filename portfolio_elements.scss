@@ -5,7 +5,7 @@ main{
     @include setup_container;
     background: linear-gradient(rgba(250, 241, 241, 0.774),rgba(242, 250, 241, 0.774), rgba(213, 186, 10, 0.979)), url(./media/img/portfolio/texture.png);    
     #sub_container{
-        @include sub_container;
+        @include sub_container_3;
         margin-top: 60px;
         background-color: rgba(255, 255, 255, 0.656);
         flex-direction: column;
@@ -38,9 +38,8 @@ main{
         }
         .img{
             width: 200px;
-            border: solid black 2px;
+            border: solid black 1px;
             border-radius: 20px;
-        
         }
     }
 }

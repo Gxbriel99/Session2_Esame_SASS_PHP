@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Valuta le condizioni dei dati inseriti
     switch(true){
         // Se uno dei campi è vuoto, genera un errore generico
-        case($nome =='' || $cognome=='' || $email=='' || $oggetto=='' || $textarea==''):
+        case($nome =='' && $cognome=='' && $email=='' && $oggetto=='' && $textarea==''):
             $errorGeneric = "I campi non possono essere lasciati vuoti";
             $error++;
             break;
@@ -45,10 +45,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $errorGeneric = "Attenzione! Il campo textarea non può essere lasciato vuoto";
             $error++;
             break;
-        if($error>0){
-            exit();
-            
-        }
         // Se tutti i campi sono stati compilati, memorizza i dati e mostra un messaggio di successo
         default:
             // Crea un array associativo con i dati del form
@@ -118,9 +114,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p class="p1">Welcome to the yellow side of moon</p>
             <p class="p2">We do some creative stuff</p>
             <!-- punto di collegamento fra la ancora e il menù -->
-            <a  class="container1_btn"href="#top1">ESPLORA</a>
+            <a  class="container1_btn" href="#top1">ESPLORA</a>
         </div>
-        <div  id="top1"class="container2">
+        <div id="top1" class="container2">
             <!-- punto di collegamento fra la ancora e il menù -->
             <div class="text_container2">
                 <div class="p1">ABOUT US</div>
@@ -179,11 +175,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <form method="post" action="./index.php" novalidate>
                 <p>Contact Us</p>
                 <p class="p2">Possiamo prenderci del tempo per chattare insieme o per bere un caffè!</p>
-                <input type="text" class="<?php if($error > 0 && isset($_POST['submit'])) echo 'error_input'; else echo 'form_input'; ?>" name="nome" required ="<?php echo $nome ?>" placeholder="Nome">
-                <input type="text" class="<?php if($error > 0 && isset($_POST['submit'])) echo 'error_input'; else echo 'form_input'; ?>" name="cognome" required value="<?php echo $cognome ?>" placeholder="Cognome">
-                <input type="email" class="<?php if($error > 0 && isset($_POST['submit'])) echo 'error_input'; else echo 'form_input'; ?>" name="email" required value="<?php echo $email ?>" placeholder="Email">
-                <input type="text" class="<?php if($error > 0 && isset($_POST['submit'])) echo 'error_input'; else echo 'form_input'; ?>" name="oggetto" required value="<?php echo $oggetto ?>" placeholder="Oggetto">
-                <textarea name="textarea" required rows="5" cols="20" placeholder="Ponimi il tuo quesito..."><?php echo $textarea ?></textarea>
+                <input type="text" class="<?php if($error > 0 && isset($_POST['submit']) && empty($nome)) echo 'error_input'; else echo 'form_input'; ?>" name="nome" required  value="<?php echo $nome ?>" placeholder="Nome">
+                <input type="text" class="<?php if($error > 0 && isset($_POST['submit']) && empty($cognome)) echo 'error_input'; else echo 'form_input'; ?>" name="cognome" required value="<?php echo $cognome ?>" placeholder="Cognome">
+                <input type="email" class="<?php if($error > 0 && isset($_POST['submit']) && empty($email) ) echo 'error_input'; else echo 'form_input'; ?>" name="email" required value="<?php echo $email ?>" placeholder="Email">
+                <input type="text" class="<?php if($error > 0 && isset($_POST['submit']) && empty($oggetto) ) echo 'error_input'; else echo 'form_input'; ?>" name="oggetto" required value="<?php echo $oggetto ?>" placeholder="Oggetto">
+                <textarea name="textarea" class="<?php if($error > 0 && isset($_POST['submit']) && empty($textarea)) echo 'error_input'; else echo $textarea; ?>"required rows="5" cols="20" placeholder="Ponimi il tuo quesito..."><?php echo $textarea ?></textarea>
                 <div class="container_form_button">
                     <input class="form_button" type="submit" name="submit" value="Invia" >
                     <input class="form_button" type="reset"  name="reset" value="Reset" >
